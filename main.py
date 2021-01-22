@@ -8,23 +8,19 @@ import random
 
 def tempConvert(t):
     """This function converts a Celsius temperature to a Fahrenheit temperature."""
-    conversion = (t * (9/5)) + 32
-    return conversion
+    return (t * (9/5)) + 32
 
 
-def diceRoll(d1, d2):
+def diceRoll(s):
     """This function creates the sum a two dice roll."""
-    roll = d1 + d2
-    return roll
+    return random.randint(1, s) + random.randint(1, s)
 
 
 def main():
     temperature = float(input("Please enter a degree value for a Celsius temperature: "))
     print(str(temperature) + " degrees Celsius is " + str(tempConvert(temperature)) + " degrees Fahrenheit.")
     maxroll = int(input("How many sides do your dice have? "))
-    dice1 = random.randint(1, maxroll)
-    dice2 = random.randint(1, maxroll)
-    print("Your roll is " + str(diceRoll(dice1, dice2)) + ".")
+    print("Your roll is " + str(diceRoll(maxroll)) + ".")
 
 
 if __name__ == "__main__":
