@@ -1,26 +1,31 @@
 # Student: Eric Tolson
-# Lab3_PartA: Questions 1 and 2
-# This program converts a read temp from Celsius to Fahrenheit and simulates a two-dice roll based on side-value input.
+# Lab5_PartB
+
+def summer(loopAmount):
+    """This function loops an integer prompt as many times as the argument value and returns the sum of those inputs."""
+    totalSum = 0
+    for num in range(loopAmount):
+        num = int(input("Enter a number: "))
+        totalSum += num
+    print("The sum is " + str(totalSum))
+    return totalSum
 
 
-import random
-
-
-def tempConvert(t):
-    """This function converts a Celsius temperature to a Fahrenheit temperature."""
-    return (t * (9/5)) + 32
-
-
-def diceRoll(s):
-    """This function creates the sum a two dice roll."""
-    return random.randint(1, s) + random.randint(1, s)
+def average(sumInput, divideAmount):
+    """This function divides a sum by an amount and returns an average."""
+    print("The average is " + str(sumInput / divideAmount))
+    return sumInput / divideAmount
 
 
 def main():
-    temperature = float(input("Please enter a degree value for a Celsius temperature: "))
-    print(str(temperature) + " degrees Celsius is " + str(tempConvert(temperature)) + " degrees Fahrenheit.")
-    maxroll = int(input("How many sides do your dice have? "))
-    print("Your roll is " + str(diceRoll(maxroll)) + ".")
+    # set loopAmount argument to integer input
+    loopAmount = int(input("How many numbers do you want to add? "))
+
+    # set sumInput argument to summer function return
+    sumInput = summer(loopAmount)
+
+    # call average function with summer function return and loopAmount
+    average(sumInput, loopAmount)
 
 
 if __name__ == "__main__":
